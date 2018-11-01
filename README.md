@@ -1,4 +1,4 @@
-# React Suspense with GraphQL Query
+## React Suspense with GraphQL Query
 
 ```js
 import { unstable_createResource} from 'react-cache'
@@ -29,7 +29,7 @@ function Data() {
 export default Data
 ```
 
-# GraphQL query using a custom useReducer hook to manage loading / error state
+## GraphQL query using a custom useReducer hook to manage loading / error state
 
 ```js
 import { API, graphqlOperation } from 'aws-amplify'

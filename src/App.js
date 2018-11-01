@@ -13,11 +13,10 @@ const App = () => {
       { !loading && todos.map((t, i) => <p key={i}>{t.name}</p>)}
       { loading && !error && <p>Loading...</p>}
       { error && <p>Error!</p>}
-
       <div>
-      <Suspense fallback={<div>loading...</div>}>
-        <Data />
-      </Suspense>
+        <Suspense fallback={<div>loading...</div>}>
+          <Data />
+        </Suspense>
       </div>
     </div>
   );
