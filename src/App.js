@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Suspense } from 'react'
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+import readData from './queryTodos'
+import Data from './suspenseTodos'
+
+const App = () => {
+  const [todos, loading, error] = readData()
+  console.log('todos: ', todos)
+  // console.log(data() ? data() : 'null')
+  return (
+    <div className="App">
+      { !loading && todos.map((t, i) => <p key={i}>{t.name}</p>)}
+      { loading && !error && <p>Loading...</p>}
+      { error && <p>Error!</p>}
+
+      <div>
+      <Suspense fallback={<div>loading...</div>}>
+        <Data />
+      </Suspense>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;

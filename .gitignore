@@ -8,6 +8,11 @@
 # testing
 /coverage
 
+# aws
+amplify
+.amplifyrc
+src/aws-exports.js
+
 # production
 /build
 
