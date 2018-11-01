@@ -29,6 +29,22 @@ function Data() {
 export default Data
 ```
 
+Usage with Suspense:
+
+```js
+import Data from './suspenseTodos'
+
+const App = () => {
+  return (
+    <div className="App">
+      <Suspense fallback={<div>loading...</div>}>
+        <Data />
+      </Suspense>
+    </div>
+  );
+}
+```
+
 ## GraphQL query using a custom useReducer hook to manage loading / error state
 
 ```js
