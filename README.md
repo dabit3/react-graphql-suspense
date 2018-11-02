@@ -1,3 +1,9 @@
+```json
+  "react": "^16.7.0-alpha.0",
+  "react-cache": "^2.0.0-alpha.1",
+  "react-dom": "^16.7.0-alpha.0"
+```
+
 ## React Suspense with GraphQL Query
 
 ```js
