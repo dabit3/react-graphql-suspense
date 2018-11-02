@@ -1,3 +1,5 @@
+## * Experimentatl * Data fetching with React Suspense
+
 ```json
   "react": "^16.7.0-alpha.0",
   "react-cache": "^2.0.0-alpha.1",
@@ -72,7 +74,7 @@ export const createFetcher = fetcher => {
 export default createFetcher
 ```
 
-## GraphQL query using a custom useReducer hook to manage loading / error state
+## Don't do this (or do, whatever 🤷‍♂️), -> GraphQL query using a custom useReducer hook to manage loading / error state
 
 ```js
 import { API, graphqlOperation } from 'aws-amplify'
