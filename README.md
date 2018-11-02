@@ -6,6 +6,8 @@
 
 ## React Suspense with GraphQL Query
 
+### Using React-cache
+
 ```js
 import { unstable_createResource} from 'react-cache'
 import { API, graphqlOperation } from 'aws-amplify'
@@ -49,6 +51,25 @@ const App = () => {
     </div>
   );
 }
+```
+
+### Writing your own fetcher / createResources to throw a promise & cache results:
+
+```js
+export const createFetcher = fetcher => {
+  let cache = {};
+  return {
+    read: (...args) => {
+      if (cache[args] === undefined) {
+        throw fetcher(args).then(v => (cache[args] = v));
+      } else {
+        return cache[args];
+      }
+    }
+  }
+}
+
+export default createFetcher
 ```
 
 ## GraphQL query using a custom useReducer hook to manage loading / error state

@@ -1,6 +1,7 @@
-import { unstable_createResource} from 'react-cache'
 import { API, graphqlOperation } from 'aws-amplify'
 import React from 'react'
+
+import createFetcher from './createFetcher'
 
 const query = `
   query {
@@ -14,7 +15,7 @@ const query = `
   }
 `
 
-const myResource = unstable_createResource(async() => {
+const myResource = createFetcher(async() => {
   const data = await API.graphql(graphqlOperation(query))
   console.log('data: ', data)
   return data.data.listTodos.items
