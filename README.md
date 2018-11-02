@@ -1,4 +1,4 @@
-## * Experimentatl * Data fetching with React Suspense
+## * Experimental * Data fetching with React Suspense
 
 ```json
   "react": "^16.7.0-alpha.0",
